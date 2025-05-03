@@ -27,4 +27,18 @@ public class Board {
     public void consumeFood(){
         foodIndex++;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Board: ").append(height).append("x").append(width).append("\n");
+        sb.append("Food: ");
+        for (int i = 0; i < food.length; i++) {
+            if (i == foodIndex) sb.append("["); // Indicate current food
+            sb.append("(").append(food[i][0]).append(",").append(food[i][1]).append(")");
+            if (i == foodIndex) sb.append("]");
+            if (i != food.length - 1) sb.append(", ");
+        }
+        return sb.toString();
+    }
 }

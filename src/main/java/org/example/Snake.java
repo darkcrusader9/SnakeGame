@@ -70,4 +70,14 @@ public class Snake {
     public int getLength(){
         return this.snake.size();
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Snake: ");
+        for (Position p : snake) {
+            sb.append(p).append(" ");
+        }
+        return sb.toString().trim();
+    }
 }
